@@ -1,23 +1,26 @@
 import { View, Text, StyleSheet, TouchableOpacity, Pressable, Button }  from "react-native";
 
-export function ModalPassword(){
+export function ModalPassword({ password, handleClose }){
     return(
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.title}>Senha Gerada</Text>
 
                 <Pressable style={styles.innerPassword}>
-                    <Text style={styles.text}>123123</Text>
+                    <Text style={styles.text}>
+                        {password}
+                    </Text>
                 </Pressable>
 
                 <View style={styles.buttonArea}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Voltar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Salvar senha</Text>
-                </TouchableOpacity>
-            </View>
+                    <TouchableOpacity style={styles.button} onPress={handleClose}>
+                        <Text style={styles.buttonText} >Voltar</Text>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity style={[styles.button, styles.buttonSave]}>
+                        <Text style={styles.buttonSaveText}>Salvar senha</Text>
+                    </TouchableOpacity>
+                </View>
 
             </View>
 
@@ -61,6 +64,24 @@ const styles = StyleSheet.create({
     },
     buttonArea:{
         flexDirection: "row",
+        width: "90%",
+        marginTop: 8,
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    button:{
+        flex: 1,
+        alignItems: "center",
+        marginTop: 14,
+        marginBottom: 14,
+        padding: 8,
+    },
+    buttonSave:{
+        backgroundColor: "#ECD172",
+        borderRadius: 15,
+    },
+    buttonSaveText:{
+        color: "#fff",
+        fontWeight: "bold",
     }
-    
 })
