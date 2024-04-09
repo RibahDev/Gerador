@@ -37,7 +37,7 @@ export function Home(){
           style={{ height:50 }}
           minimumValue={6}
           maximumValue={20}
-          maximumTrackTintColor='#ff4444'
+          maximumTrackTintColor='#FA8072'
           minimumTrackTintColor='#ff0000'
           thumbTintColor='#ECD172'
           value={size}
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     
   },
   button:{
-    backgroundColor: "#ECD172",
+    backgroundColor: "#FFD700",
     width: "40%",
     height: 60,
     alignItems: "center",
